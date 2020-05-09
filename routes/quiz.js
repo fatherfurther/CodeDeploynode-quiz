@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
     var query = 'SELECT count(id) as recordcount FROM quiz.question';
     connection.query(query, function(err, results) {
         if(err){
-            console.log(err)
+            console.log(err);
         }else{
             var max = results[0].recordcount;
             //console.log(random.calrandom(1,max));
