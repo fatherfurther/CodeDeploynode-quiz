@@ -1,0 +1,21 @@
+<%- include('partials/header'); %>
+<body>
+<h1>以下の内容で質問を登録しました。</h1>
+<h2>
+<div class="setting-result">
+    <P class="question">質問：<%= question %></P>
+    <P class="answer1">回答１：<%= answer1 %></P>
+    <P class="answer2">回答２：<%= answer2 %></P>
+    <P class="answer3">回答３：<%= answer3 %></P>
+    <P class="correctNo"></P>正解番号：<%= correctNo %></P>
+    <P class="level">レベル：<%= level %></P>
+</div>
+</h2>
+<div class="rutern-button">
+    <input type="button" onclick="location.href='./setting'" value="質問登録に戻る" data-mini="true">
+</div>
+<div class="gototop-button">
+    <input type="button" onclick="location.href='./'" value="トップページにもどる" data-mini="true">
+</div>
+</body>
+</html>

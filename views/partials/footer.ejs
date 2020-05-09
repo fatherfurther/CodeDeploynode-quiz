@@ -1,0 +1,23 @@
+<div class="footer">
+    <div class="footer-button">
+        <input type="button" onclick="goTopConfirm()" value="クイズをやめる" data-mini="true">
+    </div>
+</div>
+</body>
+</html>
+
+<script>
+    function goTopConfirm(){
+
+        swal({
+        text: "クイズをやめますか？",
+        buttons: true
+        })
+        .then((willDelete) => {
+            if (willDelete) {
+                sessionStorage.setItem( "Q-count", 0 );
+                location.href='./';
+            }
+        });
+    }
+</script>

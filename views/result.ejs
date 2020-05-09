@@ -1,0 +1,24 @@
+<%- include('partials/header'); %>
+
+<body>
+<h1>結果ページ</h1>
+
+<h2>あなたは<span id="_correct"></span>もんせいかいしました。<span id="_excellent"></span></h2>
+<div class="gototop-button">
+    <input type="button" onclick="location.href='./'" value="はじめにもどる" data-mini="true">
+</div>
+<script>
+    var C = document.getElementById('_correct');
+    var E = document.getElementById('_excellent');
+    var count = parseInt( sessionStorage.getItem( "Q-count" ) );
+    if (count == "<%= q_total %>"){
+        C.innerHTML = "ぜん";
+        E.innerHTML = "すばらしい！！";
+    }else{
+        C.innerHTML = count;
+    }
+    sessionStorage.setItem( "Q-count", 0 );
+</script>
+</body>
+</html>
+
