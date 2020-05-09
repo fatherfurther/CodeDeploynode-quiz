@@ -1,0 +1,33 @@
+<%- include('partials/header'); %>
+
+<body>
+
+<h1>クイズページ（<%= q_now %>／<%= q_total %>）</h1>
+<!--クイズの表示-->
+<h2><%= question %></h2>
+
+<button type="button" onclick="Answer_Check(1)"><%= ans1 %></button>
+<button type="button" onclick="Answer_Check(2)"><%= ans2 %></button>
+<button type="button" onclick="Answer_Check(3)"><%= ans3 %></button>
+
+<script type="text/javascript">
+count =parseInt( sessionStorage.getItem( "Q-count" ) ) || 0
+// 回答ボタンを押したときの処理
+function Answer_Check(ans) {
+    if(ans == "<%= correct %>") {
+        swal("せいかい！おおあたり！")
+        .then((value) => {
+        sessionStorage.setItem( "Q-count", count+1 );
+        location.href='/quiz';
+        });
+    } else {
+        swal("ちがうよ！ざんねん！")
+        .then((value) => {
+        location.href='/quiz';
+        });
+    }
+}
+
+</script>
+
+<%- include('partials/footer'); %>

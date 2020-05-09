@@ -1,0 +1,29 @@
+<%- include('partials/header'); %>
+<body>
+<h1>質問の登録</h1>
+<div class="qa-setting"">
+    <form action="/setting" method="post" id="qa-set"">
+        <span class="label">質問文</span><input type="text" name="question" class="input" required><br>
+        <span class="label">回答１</span><input type="text" name="answer1" class="input" required><br>
+        <span class="label">回答２</span><input type="text" name="answer2" class="input" required><br>
+        <span class="label">回答３</span><input type="text" name="answer3" class="input" required><br>
+        <p>正解番号<select name="correctNo" form="qa-set">
+            <option value="">正解番号を選ぶ</option>
+            <option value="1">回答１</option>
+            <option value="2">回答２</option>
+            <option value="3">回答３</option>
+        </select></p>
+        <p>レベル<select name="level" form="qa-set">
+            <option value="">質問の難易度レベルを選ぶ</option>
+            <option value="1">レベル１</option>
+            <option value="2">レベル２</option>
+            <option value="3">レベル３</option>
+        </select></p><br>
+        <p><input type="submit" value="登録する"></p>
+    </form>
+</div>
+<div class="footer-button">
+    <input type="button" onclick="location.href='./'" value="トップページにもどる" data-mini="true">
+</div>
+</body>
+</html>
